@@ -130,6 +130,7 @@ module Rack::PerftoolsProfiler
       nodefraction = options.fetch('nodefraction') { nil }
 
       args = ["--#{printer}"]
+      args << "--lines" # we want line info, this might just break though
       args << "--ignore=#{ignore}" if ignore
       args << "--focus=#{focus}" if focus
       args << "--nodecount=#{nodecount}" if nodecount
